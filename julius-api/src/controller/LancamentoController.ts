@@ -9,6 +9,16 @@ export class LancamentoController {
 
     }
 
+    async recuperarId(id: number) {
+        const lancamento = await getManager().findOne(Lancamento, id);
+        return lancamento;
+    }
+    
+    async recuperar() {
+        const lancamentos = await getManager().find(Lancamento);
+        return lancamentos;
+    }
+
 
 
   /** async alterar (id : number){
@@ -32,6 +42,11 @@ export class LancamentoController {
            return lancamento
        }
    }
+
+
+
+
+  
  
 
 }
